@@ -11,7 +11,7 @@ class EmailValidator:
     def display_stored_emails(self):
         with open(self.filename, "r+") as rd:
             stored_emails = [i.strip() for i in rd.readlines()]
-            print(f"Stored Emails: {stored_emails}")
+            print(f"Stored Emails: {stored_emails}" if stored_emails else "There are no emails in the list.")
 
     def ask_and_store_emails(self):
         with open(self.filename, "w+") as wt:
