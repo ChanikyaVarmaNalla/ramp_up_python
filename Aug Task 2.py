@@ -16,18 +16,19 @@ class EmailValidator:
     def ask_and_store_emails(self):
         with open(self.filename, "w+") as wt:
             while True:
-                email = input("Enter an email (type 'exit' to quit): ")
-
-                if email == "exit":
+                user_des = input("Say 'yes' or 'no' : ")
+                if user_des == "yes":
+                    email = input("Enter an email (type 'exit' to quit): ")
+                    if self.is_valid_email(email):
+                        wt.writelines([email + '\n'])
+                        print("Email added to the file")
+                    else:
+                        print("Invalid email format. Please try again.")
+                        continue
+                elif user_des == "no":
                     wt.close()
                     self.display_stored_emails()
                     break
-                if self.is_valid_email(email):
-                    wt.writelines([email + '\n'])
-                    print("Email added to the file")
-                else:
-                    print("Invalid email format. Please try again.")
-                    continue
 
 email_validator = EmailValidator()
 email_validator.ask_and_store_emails()
