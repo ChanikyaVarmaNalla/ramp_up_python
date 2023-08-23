@@ -33,7 +33,8 @@ class IPValidator:
                         print(f"{ip} is valid but not pingable")
                         file.writelines(f"{ip} Valid but Not Pingable\n")
                 else:
-                    print(f"{ip} is not valid. Skipping...")
+                    print(f"{ip} is valid")
+                    file.writelines(f"{ip} is not valid. Skipping...")
 
 ip_validator = IPValidator()
 ip_validator.validate_and_log()
