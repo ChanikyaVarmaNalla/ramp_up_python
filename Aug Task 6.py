@@ -5,34 +5,34 @@ class Shape:
         print(f"Shape")
 
 class Square(Shape):
-
-    def __init__(self):
-        self.side = None
-
-    def calculate_area(self, side):
-        self.side = side
-        return self.side ** 2
+    def calculate_area(self, side=None):
+        if side is not None:
+            self.side = side
+            return self.side ** 2
+        else:
+            return super().calculate_area()
 
 class Triangle(Shape):
-
-    def __init__(self):
-        self.height = None
-        self.base = None
-
-    def calculate_area(self, base, height):
-        self.base = base
-        self.height = height
-        return 0.5 * self.base * self.height
+    def calculate_area(self, base=None, height=None):
+        if base is not None and height is not None:
+            self.base = base
+            self.height = height
+            return 0.5 * self.base * self.height
+        else:
+            return super().calculate_area()
 
 class Circle(Shape):
+    def calculate_area(self, radius=None):
+        if radius is not None:
+            self.radius = radius
+            return math.pi * (self.radius ** 2)
+        else:
+            return super().calculate_area()
 
-    def __init__(self):
-        self.radius = None
+square = Square()
+triangle = Triangle()
+circle = Circle()
 
-    def calculate_area(self, radius):
-        self.radius = radius
-        return math.pi * (self.radius ** 2)
-
-print(f"Area of Square: {Square().calculate_area(float(input('Side of Square: ')))}")
-print(f"Area of Triangle: {Triangle().calculate_area(float(input('Base of Triangle: ')), float(input('Height of Triangle: ')))}")
-print(f"Area of Circle: {Circle().calculate_area(float(input('Radius of Circle: ')))}")
+print(f"Area of Square: {square.calculate_area(float(input('Side of Square: ')))}")
+print(f"Area of Triangle: {triangle.calculate_area(float(input('Base of Triangle: ')), float(input('Height of Triangle: ')))}")
+print(f"Area of Circle: {circle.calculate_area(float(input('Radius of Circle: ')))}")
