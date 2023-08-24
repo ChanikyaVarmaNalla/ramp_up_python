@@ -17,3 +17,15 @@
 2. Right Click on the file
 3. Click on th "Run 'name of file' " option
 4. Provide the input IP in console
+
+# Task 4 Execution Steps
+1. Copy the code into new .py file
+2. Right Click on the file
+3. Click on th "Run 'name of file' " option
+4. Provide the input number of employees in console
+
+# Task 6 Execution Steps
+1. Copy the code into new .py file
+2. Right Click on the file
+3. Click on th "Run 'name of file' " option
+4. Provide the input requried parameters in console
