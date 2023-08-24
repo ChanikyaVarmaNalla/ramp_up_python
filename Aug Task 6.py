@@ -29,10 +29,6 @@ class Circle(Shape):
         else:
             return super().calculate_area()
 
-square = Square()
-triangle = Triangle()
-circle = Circle()
-
-print(f"Area of Square: {square.calculate_area(float(input('Side of Square: ')))}")
-print(f"Area of Triangle: {triangle.calculate_area(float(input('Base of Triangle: ')), float(input('Height of Triangle: ')))}")
-print(f"Area of Circle: {circle.calculate_area(float(input('Radius of Circle: ')))}")
+print(f"Area of Square: {Square().calculate_area(float(input('Side of Square: ')))}")
+print(f"Area of Triangle: {Triangle().calculate_area(float(input('Base of Triangle: ')), float(input('Height of Triangle: ')))}")
+print(f"Area of Circle: {Circle().calculate_area(float(input('Radius of Circle: ')))}")
