@@ -25,8 +25,8 @@ def main():
         for employee in employee_list:
             print(employee)
 
-    except ValueError:
-        print("Invalid input. Please enter a valid number of employees.")
+    except ValueError as e:
+        print(f"{e}")
 
 if __name__ == "__main__":
     main()
