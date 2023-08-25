@@ -2,32 +2,22 @@ import math
 
 class Shape:
     def calculate_area(self, *args):
-        print(f"Shape")
+        pass
 
 class Square(Shape):
-    def calculate_area(self, side=None):
-        if side is not None:
-            self.side = side
-            return self.side ** 2
-        else:
-            return super().calculate_area()
+
+    def calculate_area(self, side):
+        return side ** 2
 
 class Triangle(Shape):
-    def calculate_area(self, base=None, height=None):
-        if base is not None and height is not None:
-            self.base = base
-            self.height = height
-            return 0.5 * self.base * self.height
-        else:
-            return super().calculate_area()
+
+    def calculate_area(self, base, height):
+        return 0.5 * base * height
 
 class Circle(Shape):
-    def calculate_area(self, radius=None):
-        if radius is not None:
-            self.radius = radius
-            return math.pi * (self.radius ** 2)
-        else:
-            return super().calculate_area()
+
+    def calculate_area(self, radius):
+        return math.pi * radius ** 2
 
 print(f"Area of Square: {Square().calculate_area(float(input('Side of Square: ')))}")
 print(f"Area of Triangle: {Triangle().calculate_area(float(input('Base of Triangle: ')), float(input('Height of Triangle: ')))}")
