@@ -2,7 +2,7 @@ import math
 
 class Shape:
     def calculate_area(self, *args):
-        print(f"{Shape.__name__}")
+        print(f"{self.__class__.__name__} is the parent")
 
 class Square(Shape):
 
