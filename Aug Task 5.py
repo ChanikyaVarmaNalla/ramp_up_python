@@ -1,4 +1,3 @@
-import sys
 import threading
 import time
 import random
@@ -43,11 +42,9 @@ class ProducerConsumer:
             thread.join()
 
 if __name__ == "__main__":
-    if len(sys.argv) != 3:
-        print("Usage: python program.py <num_producers> <num_consumers>")
-        sys.exit(1)
 
-    num_producers, num_consumers = map(int, sys.argv[1:3])
+    num_producers = int(input("Number of producers: "))
+    num_consumers = int(input("Number of consumers: "))
 
     producer_consumer = ProducerConsumer(num_producers, num_consumers)
     producer_consumer.run()
