@@ -11,17 +11,17 @@ class ProducerConsumer:
         self.shared_queue = queue.Queue()
 
     def producer(self):
-        for i in range(3):  # Produce 5 items
+        for i in range(3):  # Produce 3 items (you can adjust this)
             item = f"Item {i}"
             self.shared_queue.put(item)
-            print(f"Producing {item}")
+            print(f"Producing {item} by Producer")
             time.sleep(random.uniform(0.1, 0.5))
 
     def consumer(self):
         while True:
             try:
                 item = self.shared_queue.get(timeout=1)
-                print(f"Consuming {item}")
+                print(f"Consuming {item} by Consumer")
                 self.shared_queue.task_done()
                 time.sleep(random.uniform(0.1, 0.5))
             except queue.Empty:
