@@ -2,7 +2,7 @@ import math
 
 class Shape:
     def calculate_area(self):
-        pass
+        print(f"{self.__class__.__name__} is a base class")
 
 class Square(Shape):
     def calculate_area(self):
