@@ -8,22 +8,21 @@ class ProducerConsumer:
     def __init__(self, num_producers, num_consumers):
         self.num_producers = num_producers
         self.num_consumers = num_consumers
-        self.shared_queue = queue.Queue()
+        self.shared_queue = queue.Queue(maxsize=5)
 
     def producer(self):
-        for i in range(3):  # Produce 3 items (you can adjust this)
-            item = f"Item {i}"
-            self.shared_queue.put(item)
-            print(f"Producing {item} by Producer")
-            time.sleep(random.uniform(0.1, 0.5))
+        item = f"Item from Producer {threading.current_thread().name.split()[0].split('-')[-1]}"
+        self.shared_queue.put(item, block=True)
+        print(f"Producing {item}")
+        time.sleep(random.uniform(0.1, 0.5))
 
     def consumer(self):
         while True:
             try:
                 item = self.shared_queue.get(timeout=1)
-                print(f"Consuming {item} by Consumer")
+                print(f"Consuming {item} by Consumer {threading.current_thread().name.split()[0].split('-')[-1]}")
                 self.shared_queue.task_done()
-                time.sleep(random.uniform(0.1, 0.5))
+                break
             except queue.Empty:
                 break
 
