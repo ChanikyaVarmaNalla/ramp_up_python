@@ -23,8 +23,8 @@ class AttendanceAnalyzer:
                     WFO_today += 1
         return WFH_today, WFO_today
 
-    def count_attendance_previous(self, num_days=5):
-        previous_dates = [(date.today() - timedelta(days=i)).strftime('%b %d') for i in range(1, num_days + 1)]
+    def count_attendance_previous(self):
+        previous_dates = [(date.today() - timedelta(days=i)).strftime('%b %d') for i in range(1, 6)]
         WFH_previous = 0
         WFO_previous = 0
         for emp_id, attend in self.data.items():
