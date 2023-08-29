@@ -21,7 +21,7 @@ class TeamExpertiseTreemap:
             parents=['' for _ in self.df['Area']],
             values=self.df['Existing Team Members Proficient with this area'],
             customdata=self.df['Color'],
-            hovertemplate='<b>Area:</b> %{label}<br><b>Team Size:</b> %{value}<br><b>Expertise:</b> %{customdata}',
+            hovertemplate='<b>Area:</b> %{label}<br><b>Team Size:</b> %{value}<br>',
             marker=dict(
                 colorscale=['white', 'rgb(173, 255, 47)', 'rgb(0, 255, 0)', 'rgb(0, 128, 0)', 'rgb(0, 100, 0)', 'rgb(0, 64, 0)', 'rgb(0, 32, 0)'],
             ),
