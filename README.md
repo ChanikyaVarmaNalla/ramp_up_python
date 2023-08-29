@@ -46,3 +46,10 @@
 2. Copy the code into new .py file
 3. Right Click on the file
 4. Click on th "Run 'name of file' " option
+
+# Task 9 Execution Steps
+1. Crate a excel sheet with team expertise data
+2. Copy the code into new .py file
+3. Right Click on the file
+4. Click on th "Run 'name of file' " option
+
