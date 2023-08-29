@@ -18,8 +18,8 @@ class ATM:
         while True:
             try:
                 amount = int(input("Enter amount to withdraw: "))
-                if not (amount > 0 and amount % 50 == 0):
-                    print("Invalid amount. Please enter a valid amount (multiple of 50).")
+                if not (amount > 0 and amount % min(self.notes) == 0):
+                    print(f"Invalid amount. Please enter a valid amount (multiple of {min(self.notes)}).")
                     continue
                 notes_count = self.calculate_notes(amount)
                 for note, count in notes_count.items():
