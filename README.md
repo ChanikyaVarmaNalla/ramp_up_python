@@ -40,3 +40,9 @@
 2. Right Click on the file
 3. Click on th "Run 'name of file' " option
 4. Provide the input witdrawal amount in console
+
+# Task 8 Execution Steps
+1. Crate a excel sheet with employee attendance data
+2. Copy the code into new .py file
+3. Right Click on the file
+4. Click on th "Run 'name of file' " option
